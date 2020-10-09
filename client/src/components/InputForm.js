@@ -13,10 +13,7 @@ const useStyles = makeStyles({
         maxWidth: 450,
         padding: 12,
         margin:'0 auto',
-    },
-    // submit: {
-    //     margin: theme.spacing(3, 0, 2),
-    // }
+    }
 });
 const schema = yup.object().shape({
     title: yup.string().required("Required"),
@@ -27,17 +24,13 @@ export default () => {
     const dispatch = useDispatch();
     console.error = () => { };
     const [expDate, setExpDate] = useState(new Date());
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(schema),
-    });
+    const { register, handleSubmit, errors } = useForm({resolver: yupResolver(schema),});
     const handleCreteExpense = (data, event) => {
         event.preventDefault();
         data.exp_date = expDate;
         dispatch(createExpenses(data));
-        // console.log("FORM DATA: ",data);
     }
     const classes = useStyles();
-
     return (
         <Box className={classes.formContainer}>
             <form noValidate onSubmit={handleSubmit(handleCreteExpense)}>
@@ -96,7 +89,6 @@ export default () => {
                                 variant="inline"
                                 inputVariant="outlined"
                                 margin="normal"
-                                // inputRef={register({ required: true })}
                                 fullWidth
                                 id="date"
                                 label="Date"

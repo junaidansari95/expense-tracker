@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     flexDirection:'column',
     alignItems: 'center',
     marginTop: 18,
-    // overflowY: 'scroll'
   },
   item: {
     display: 'flex',
@@ -41,7 +40,6 @@ const useStyles = makeStyles({
 export default () => {
   const classes = useStyles();
   const { expenses } = useSelector(state => state.expenses);
-  // expenses.();
   const dispatch = useDispatch();
   // eslint-disable-next-line
   useEffect(() => { dispatch(getExpenses()) }, [])
@@ -85,7 +83,6 @@ const ListItem = (props) => {
     </Box>
   );
 }
-
 const UpdateListItem = (props) => {
   const dispatch = useDispatch();
   const { expenseItem } = props;
