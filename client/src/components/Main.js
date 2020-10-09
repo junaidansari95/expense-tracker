@@ -8,7 +8,9 @@ import ExpenseList from './ExpenseList';
 export default () => {
     const { expenses } = useSelector(state => state.expenses);
     let total = 0;
-    expenses.forEach(exp => total += exp.amount);
+    if(undefined !== expenses && expenses.length){
+        expenses.forEach(exp => total += exp.amount);
+    }
     return (
         <>
             <Box className="header">
