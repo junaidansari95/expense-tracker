@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../App.css';
 import { useSelector } from 'react-redux';
 import { Box, Typography, Divider } from '@material-ui/core';
-import { getExpenses } from '../Action/expenseAction';
 import InputForm from './InputForm';
 import ExpenseList from './ExpenseList';
 
